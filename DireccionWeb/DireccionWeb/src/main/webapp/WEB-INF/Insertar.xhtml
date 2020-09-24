@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+            <h:form id="planilla">
+                <p:growl id="grow2" sticky="true" />
+                <p:dataTable id="planillaList" var="planilla" value="#{planillabean.newplanilla}">
+                    <p:column headerText="Id">
+                        <p:inputText value="#{planillabean.newplanilla.id}" converter="#{BigDecimal}" required="false" disabled="true"   ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Calle">
+                        <p:inputText id="calle" value="#{planillabean.newplanilla.calle}"   ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Departamento">
+                        <p:inputText id="departamento" value="#{planillabean.newplanilla.departamento}"   ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Numero De Telefono">
+                        <p:inputText id="numerodetelefono" value="#{planillabean.newplanilla.numerodetelefono}"   ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Numero de Casa">
+                        <p:inputText id="numerodecasa" value="#{planillabean.newplanilla.numerodecasa}"   ></p:inputText>
+                    </p:column>
+
+                    <p:column>
+                        <p:commandButton update="planillaList" value="Insertar" action="#{planillabean.Insertar()}" class="btn btn-secondary"></p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+            </h:form>
+    </h:body>
+</html>
+
